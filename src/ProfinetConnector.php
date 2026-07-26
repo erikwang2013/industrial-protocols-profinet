@@ -86,7 +86,8 @@ class ProfinetConnector implements ConnectorInterface
     {
         $request = ProfinetFrame::dcpIdentify();
         // Broadcast to all devices
-        $sock = stream_socket_client("udp://255.255.255.255:34964", $errno, $errstr, 2);
+        $ctx = stream_context_create(['socket' => ['so_broadcast' => true]]);
+        $sock = stream_socket_client("udp://255.255.255.255:34964", $errno, $errstr, 2, STREAM_CLIENT_CONNECT, $ctx);
         if (!$sock) {
             throw new \RuntimeException("Broadcast failed: $errstr");
         }

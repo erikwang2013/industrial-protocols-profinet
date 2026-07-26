@@ -112,7 +112,7 @@ class ProfinetFrame implements FrameInterface
                 $pos += 6;
                 $blockData = $blockLen > 0 ? substr($body, $pos, $blockLen) : '';
                 $pos += $blockLen;
-                $blocks[] = compact('option', 'suboption', 'blockLen', 'blockData');
+                $blocks[] = ['option' => $option, 'suboption' => $suboption, 'blockLen' => $blockLen, 'blockData' => $blockData];
             }
         }
 

@@ -41,7 +41,7 @@ class ProfinetFrameTest extends TestCase
     {
         $protocol = new ProfinetProtocol();
         $this->assertSame('profinet', $protocol->getName());
-        $this->assertSame('1.0.0', $protocol->getVersion());
+        $this->assertSame('1.1.1', $protocol->getVersion());
         $this->assertSame(34964, $protocol->getDefaultPort());
         $this->assertContains('nrt', $protocol->getSupportedVariants());
     }
