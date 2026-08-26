@@ -102,9 +102,10 @@ class ProfinetFrame implements FrameInterface
         $serviceId = substr($body, 0, 2);
 
         $blocks = [];
-        if ($frameId === 0xFEFE && strlen($body) > 12) {
+        // DCP prefix before blocks: service_id(2) + service_type(1) + xid(4) + response_delay(2) + dcp_length(2) = 11
+        if ($frameId === 0xFEFE && strlen($body) > 11) {
             // Parse DCP response blocks
-            $pos = 12;
+            $pos = 11;
             while ($pos + 6 <= strlen($body)) {
                 $option    = unpack('v', substr($body, $pos, 2))[1];
                 $suboption = unpack('v', substr($body, $pos + 2, 2))[1];
