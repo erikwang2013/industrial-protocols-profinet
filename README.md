@@ -44,7 +44,7 @@ Siemens (S7-1200/S7-1500/ET 200SP)、Phoenix Contact (AXL F BK PN)、Hilscher (n
 
 ## 兼容框架
 
-Laravel / Webman / Hyperf / ThinkPHP / Yii2 / Plain PHP
+Laravel / Webman / Hyperf / ThinkPHP / Yii2 / Yii3 / Plain PHP
 
 ## 系统要求
 
