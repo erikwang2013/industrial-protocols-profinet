@@ -16,7 +16,7 @@ ProfinetDriver（UDP DCP + TCP Record Data）→ ProfinetFrame 帧编解码。DC
 
 ## 功能
 
-DCP Identify 广播设备发现、Record Data Read/Write、模块诊断数据读取、ProfinetException 异常
+DCP Identify 广播设备发现、Record Data Read/Write、模块诊断数据读取
 
 ## 使用说明
 
